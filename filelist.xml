@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<contentpackage name="Customizable Flashlights" modversion="1.0.0" gameversion="0.17.8.0" corepackage="false">
+    <Item file="%ModDir%/Content/Items/Items.xml" />
+</contentpackage>

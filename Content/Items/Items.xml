@@ -1,0 +1,51 @@
+<Items>
+    <Item name="Customizable Flashlight" identifier="customizableFlashlight" category="Equipment" Tags="smallitem,tool,provocative" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light">
+        <PreferredContainer primary="divingcab" minamount="1" maxamount="2" spawnprobability="1" notcampaign="true"/>
+        <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,wrecksupplycab,beaconsupplycab" amount="1" spawnprobability="0.05"/>
+        <PreferredContainer secondary="outpostcrewcabinet" amount="1" spawnprobability="0.1"/>
+        <Price baseprice="200" minavailable="2">
+            <Price storeidentifier="merchantoutpost" />
+            <Price storeidentifier="merchantcity" multiplier="0.9" minavailable="3" />
+            <Price storeidentifier="merchantresearch" multiplier="1.25" />
+            <Price storeidentifier="merchantmilitary" multiplier="1.25" />
+            <Price storeidentifier="merchantmine" />
+        </Price>
+        <Deconstruct time="15">
+            <Item identifier="aluminium" />
+            <Item identifier="lightcomponent" />
+        </Deconstruct>
+        <Fabricate suitablefabricators="fabricator" requiredtime="10">
+            <RequiredSkill identifier="mechanical" level="25" />
+            <RequiredItem identifier="aluminium" amount="2" />
+            <RequiredItem identifier="lightcomponent" />
+            <RequiredItem identifier="redpaint" />
+            <RequiredItem identifier="greenpaint" />
+            <RequiredItem identifier="bluepaint" />
+        </Fabricate>
+        <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="704,320,64,64" origin="0.5,0.5" />
+        <Sprite texture="Content/Items/Tools/tools.png" sourcerect="293,185,49,18" depth="0.55" origin="0.5,0.5" />
+        <Body width="48" height="15" density="15" />
+        <Holdable slots="Any,RightHand,LeftHand,Head" holdpos="30,-50" aimpos="60,0" handle1="-20,0" msg="ItemMsgPickUpSelect">
+            <StatusEffect type="OnActive" targettype="Contained" Condition="-0.2" drawhudwhenequipped="true">
+                <RequiredItem items="mobilebattery" type="Contained" />
+            </StatusEffect>
+            <!-- the child LightComponent is only active when the Holdable is active, i.e. when the item is being held -->
+            <LightComponent LightColor="0.5,0.5,0.5,1.0" Flicker="0.02" range="1000" powerconsumption="10" IsOn="true">
+                <LightTexture texture="Content/Lights/lightcone.png" origin="0.0, 0.5" size="1.0,1.0" />
+                <IsActive targetcontaineditem="true" condition="gt 1.0"/>
+            </LightComponent>
+            <LightComponent LightColor="0.5,0.5,0.5,1.0" range="1000" powerconsumption="10" IsOn="true" flicker="0.8" flickerspeed="1.0" pulsefrequency="0.1" pulseamount="0.5">
+                <LightTexture texture="Content/Lights/lightcone.png" origin="0.0, 0.5" size="1.0,1.0" />
+                <IsActive targetcontaineditem="true" condition="lte 1.0"/>
+            </LightComponent>
+        </Holdable>
+        <ItemContainer capacity="1" maxstacksize="1" hideitems="true" containedstateindicatorstyle="battery">
+            <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="128,448,64,64" origin="0.5,0.5" />
+            <Containable items="mobilebattery">
+                <StatusEffect type="OnContaining" targettype="This" Voltage="1.0" setvalue="true" />
+            </Containable>
+        </ItemContainer>
+        <AiTarget sightrange="3000" />
+        <Upgrade gameversion="0.10.0.0" scale="0.5" />
+    </Item>
+</Items>
