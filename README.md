@@ -1,5 +1,8 @@
 # Colored Flashlights For Barotrauma
 A little mod I made for fun that adds a new flashlight that you can change the color of!
+
+![Alt text](icon.png?raw=true "Colored Flashlight Icon")
+
 The new flashlight simply called **Customizable Flashlight** requires:
 
 1x Red Paint
