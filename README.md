@@ -1,10 +1,15 @@
 # Colored Flashlights For Barotrauma
 A little mod I made for fun that adds a new flashlight that you can change the color of!
-The new flashlight simply called **Customizable Flashlight** requires
-\n 1x Red Paint
+The new flashlight simply called **Customizable Flashlight** requires:
+
+1x Red Paint
+
 1x Green Paint
+
 1x Blue Paint
+
 1x Light Component
+
 2x Aluminum
 
 # Barotrauma
