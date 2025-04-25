@@ -1,4 +1,4 @@
-# Colored Flashlights For Barotrauma
+# Colored Flashlights For Barotrauma (No Longer Works)
 A little mod I made for fun that adds a new flashlight that you can change the color of!
 
 ![Alt text](icon.png?raw=true "Colored Flashlight Icon")
